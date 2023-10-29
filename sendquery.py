@@ -8,7 +8,7 @@ url = "http://127.0.0.1:5000/visualize"
 
 Q = Image.open("./test_imgs/cell_t.jpg")
 R = Image.open("./test_imgs/cell_t.jpg")
-q = Image.open("./test_imgs/g_plate.jpg")
+q = Image.open("./test_imgs/cell_t.jpg")
 r = Image.open('./test_imgs/g_plate.jpg')
 
 Q_bytes = BytesIO()
@@ -26,7 +26,7 @@ data = [
     ('R', ('R', base64.b64encode(R_bytes.getvalue()))),
     ('q', ('q', base64.b64encode(q_bytes.getvalue()))),
     ('r', ('r', base64.b64encode(r_bytes.getvalue()))),
-    ('idx', ('idx', json.dumps({'idx': 1}))),
+    ('idx', ('idx', json.dumps({'idx': 2}))),
 ]
 
 r = requests.post(url, files=data)
