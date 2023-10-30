@@ -69,7 +69,7 @@ def visualize():
         idx = json.load(flask.request.files['idx'])
         idx = idx['idx']
 
-        """
+
         '''  Extract images from File '''
         Q_img = flask.request.files["Q"]
         Q_img = Image.open(io.BytesIO(Q_img.read()))
@@ -79,8 +79,9 @@ def visualize():
         q_img = Image.open(io.BytesIO(q_img.read()))
         r_img = flask.request.files["r"]
         r_img = Image.open(io.BytesIO(r_img.read()))
-        """
 
+
+        """
         Q_img = flask.request.files['Q'].read()
         Q_img = base64.b64decode(Q_img)
         Q_img = Image.open(io.BytesIO(Q_img))
@@ -94,7 +95,7 @@ def visualize():
         r_img = flask.request.files['r'].read()
         r_img = base64.b64decode(r_img)
         r_img = Image.open(io.BytesIO(r_img))
-
+        """
 
         ''' Compose Images '''
         # r on Left q on Right
